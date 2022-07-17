@@ -1,11 +1,15 @@
 package com.cgsait.nsiiaupruebas.modelos;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -47,4 +51,29 @@ public class Menu {
 	private Timestamp fecha_mov;
 	@Column(name = "menu_ip")
 	private String ip_mov;
+	
+	
+	public Menu(int id_menu, String id_aplicacion, int id_menu_padre, String id_tipo_menu, String id_modulo,
+			String etiqueta, String ayuda, String url_icon, int orden_opciones_menu, int nivel_opcion,
+			String usuario_mov, Timestamp fecha_mov, String ip_mov) {
+		super();
+		this.id_menu = id_menu;
+		this.id_aplicacion = id_aplicacion;
+		this.id_menu_padre = id_menu_padre;
+		this.id_tipo_menu = id_tipo_menu;
+		this.id_modulo = id_modulo;
+		this.etiqueta = etiqueta;
+		this.ayuda = ayuda;
+		this.url_icon = url_icon;
+		this.orden_opciones_menu = orden_opciones_menu;
+		this.nivel_opcion = nivel_opcion;
+		this.usuario_mov = usuario_mov;
+		this.fecha_mov = fecha_mov;
+		this.ip_mov = ip_mov;
+	}
+
+	
+	@Transient
+	@OneToMany(fetch = FetchType.LAZY)
+	public List<Menu> subMenusList;
 }

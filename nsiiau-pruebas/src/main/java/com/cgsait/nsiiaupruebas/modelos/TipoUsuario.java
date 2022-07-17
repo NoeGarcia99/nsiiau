@@ -1,11 +1,16 @@
 package com.cgsait.nsiiaupruebas.modelos;
 
 import java.sql.Time;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -35,4 +40,24 @@ public class TipoUsuario {
 	@Column(name= "tius_ip")
 	private String ip_mov;
 	
+	
+	public TipoUsuario(String id_tipo_usuario, String nombre_tipo, String descripcion, int activo, String usuario_mov,
+			Time fecha_mov, String ip_mov) {
+		super();
+		this.id_tipo_usuario = id_tipo_usuario;
+		this.nombre_tipo = nombre_tipo;
+		this.descripcion = descripcion;
+		this.activo = activo;
+		this.usuario_mov = usuario_mov;
+		this.fecha_mov = fecha_mov;
+		this.ip_mov = ip_mov;
+	}
+
+	@Transient
+	@OneToMany(fetch = FetchType.LAZY)
+	public List<RelacionTipoUsuarioAplicacion> tipoUsuarioAplicacionList;
+	
+	@Transient
+	@OneToMany(fetch = FetchType.LAZY)
+	public List<RelacionTipoUsuarioRol> tipoUsuarioRolList;
 }

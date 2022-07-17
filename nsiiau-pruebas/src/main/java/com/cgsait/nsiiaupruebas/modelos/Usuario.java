@@ -6,7 +6,9 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
@@ -37,5 +39,22 @@ public class Usuario {
 	@Column(name = "usua_ip")
 	private String ip_mov;
 	
+	public Usuario(String id_usuario, int activo, Date fecha_bloqueo, String usuario_mov, Timestamp fecha_mov,
+			String ip_mov) {
+		super();
+		this.id_usuario = id_usuario;
+		this.activo = activo;
+		this.fecha_bloqueo = fecha_bloqueo;
+		this.usuario_mov = usuario_mov;
+		this.fecha_mov = fecha_mov;
+		this.ip_mov = ip_mov;
+	}
+
+	@Transient
+	@OneToMany(fetch = FetchType.LAZY)
+	public List<Token> tokensList;
 	
+	@Transient
+	@OneToMany(fetch = FetchType.LAZY)
+	public List<RelacionUsuarioAplicacion> usuarioAplicacionList;
 }

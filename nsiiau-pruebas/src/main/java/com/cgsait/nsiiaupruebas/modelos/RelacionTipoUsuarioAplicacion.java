@@ -28,4 +28,6 @@ public class RelacionTipoUsuarioAplicacion {
 	private Timestamp fecha_mov;
 	@Column(name = "tuap_ip")
 	private String ip_mov;
+	
+	
 }
