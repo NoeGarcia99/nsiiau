@@ -1,10 +1,11 @@
 package com.cgsait.nsiiaupruebas.modelos;
 
+import java.sql.Time;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -26,7 +27,7 @@ public class TipoAplicacion {
 	@Column(name = "tiap_usua")
 	private String usuario_mov;
 	@Column(name = "tiap_fech")
-	private String fecha_mov;
+	private Time fecha_mov;
 	@Column(name = "tiap_ip")
 	private String ip_mov;
 }

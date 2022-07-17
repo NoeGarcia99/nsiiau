@@ -1,5 +1,7 @@
 package com.cgsait.nsiiaupruebas.modelos;
 
+import java.sql.Timestamp;
+
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
@@ -27,7 +29,7 @@ public class RelacionUsuarioAplicacion {
 	@Column(name = "usap_usua")
 	private String usuario_mov;
 	@Column(name = "usap_fech")
-	private String fecha_mov;
+	private Timestamp fecha_mov;
 	@Column(name = "usap_ip")
 	private String ip_mov;
 	

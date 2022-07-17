@@ -1,5 +1,7 @@
 package com.cgsait.nsiiaupruebas.modelos;
 
+import java.sql.Date;
+import java.sql.Timestamp;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -27,16 +29,13 @@ public class Usuario {
 	@Column(name = "usua_acti")
 	private int activo;
 	@Column(name = "usua_bloq")
-	private String fecha_bloqueo;
+	private Date fecha_bloqueo;
 	@Column(name = "usua_usua")
 	private String usuario_mov;
 	@Column(name = "usua_fech")
-	private String fecha_mov;
+	private Timestamp fecha_mov;
 	@Column(name = "usua_ip")
 	private String ip_mov;
-	
-	@Transient
-	public List<Token> tokens;
 	
 	
 }

@@ -1,5 +1,7 @@
 package com.cgsait.nsiiaupruebas.modelos;
 
+import java.sql.Timestamp;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -36,13 +38,13 @@ public class Menu {
 	@Column(name="menu_icon")
 	private String url_icon;
 	@Column(name="menu_ordn")
-	private String orden_opciones_menu;
+	private int orden_opciones_menu;
 	@Column(name="menu_nivl")
 	private int nivel_opcion;
 	@Column(name = "menu_usua")
 	private String usuario_mov;
 	@Column(name = "menu_fech")
-	private String fecha_mov;
+	private Timestamp fecha_mov;
 	@Column(name = "menu_ip")
 	private String ip_mov;
 }

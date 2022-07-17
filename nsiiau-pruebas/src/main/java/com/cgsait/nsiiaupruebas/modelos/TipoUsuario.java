@@ -1,5 +1,7 @@
 package com.cgsait.nsiiaupruebas.modelos;
 
+import java.sql.Time;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -29,7 +31,7 @@ public class TipoUsuario {
 	@Column(name= "tius_usua")
 	private String usuario_mov;
 	@Column(name= "tius_fech")
-	private String fecha_mov;
+	private Time fecha_mov;
 	@Column(name= "tius_ip")
 	private String ip_mov;
 	

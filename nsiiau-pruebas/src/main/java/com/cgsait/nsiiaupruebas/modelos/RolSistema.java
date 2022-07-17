@@ -1,5 +1,7 @@
 package com.cgsait.nsiiaupruebas.modelos;
 
+import java.sql.Timestamp;
+
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
@@ -20,14 +22,14 @@ public class RolSistema {
 
 	@EmbeddedId
 	private PKRolSistema pk_rol_sistema;
-	@Column(name="aprol_apli_id")
+	@Column(name="aprol_desc")
 	private String descripcion;
-	@Column(name="aprol_apli_id")
+	@Column(name = "aprol_acti")
 	private int activo;
 	@Column(name = "aprol_usua")
 	private String usuario_mov;
 	@Column(name = "aprol_fech")
-	private String fecha_mov;
+	private Timestamp fecha_mov;
 	@Column(name = "aprol_ip")
 	private String ip_mov;
 }

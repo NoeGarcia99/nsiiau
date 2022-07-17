@@ -1,5 +1,7 @@
 package com.cgsait.nsiiaupruebas.modelos;
 
+import java.sql.Timestamp;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -26,7 +28,7 @@ public class TipoMenu {
 	@Column(name = "meti_usua")
 	private String usuario_mov;
 	@Column(name = "meti_fech")
-	private String fecha_mov;
+	private Timestamp fecha_mov;
 	@Column(name = "meti_ip")
 	private String ip_mov;
 }
