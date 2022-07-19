@@ -144,7 +144,7 @@ public class PuestaEnMarchaSeguridadTest {
 	@Test
 	@Rollback(false)
 	public void guardarTipoAplicacion() {
-		TipoAplicacion tipoaplicacion = new TipoAplicacion("registro", "para registrar", "Noe Garcia", time, "148.202.222.67"); 
+		TipoAplicacion tipoaplicacion = new TipoAplicacion("registro", "para registrar", "Noe Garcia", timeStamp, "148.202.222.67"); 
 		tipoAplicacionRepo.save(tipoaplicacion);
 	}
 	
@@ -166,7 +166,7 @@ public class PuestaEnMarchaSeguridadTest {
 	@Test
 	@Rollback(false)
 	public void guardarTipoUsuario() {
-		TipoUsuario tipousuario = new TipoUsuario("admin", "administrador", "puede hacer todo", 1, "Noe Garcia", time, "148.202.222.67"); 
+		TipoUsuario tipousuario = new TipoUsuario("admin", "administrador", "puede hacer todo", 1, "Noe Garcia", timeStamp, "148.202.222.67"); 
 		tipoUsuarioRepo.save(tipousuario);
 	}
 	

@@ -1,6 +1,6 @@
 package com.cgsait.nsiiaupruebas.modelos;
 
-import java.sql.Time;
+import java.sql.Timestamp;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -32,12 +32,12 @@ public class TipoAplicacion {
 	@Column(name = "tiap_usua")
 	private String usuario_mov;
 	@Column(name = "tiap_fech")
-	private Time fecha_mov;
+	private Timestamp fecha_mov;
 	@Column(name = "tiap_ip")
 	private String ip_mov;
 	
 	
-	public TipoAplicacion(String id_tipo_aplicacion, String descripcion, String usuario_mov, Time fecha_mov,
+	public TipoAplicacion(String id_tipo_aplicacion, String descripcion, String usuario_mov, Timestamp fecha_mov,
 			String ip_mov) {
 		super();
 		this.id_tipo_aplicacion = id_tipo_aplicacion;
